@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Event Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app">
+        <header class="page-header">
+            <div>
+                <p class="eyebrow">MAKE EVERY MOMENT COUNT</p>
+                <h1>Countdown Event Planner</h1>
+                <p class="subtitle">Keep track of the moments you're looking forward to.</p>
+            </div>
+            <div class="header-icon" aria-hidden="true">⌛</div>
+        </header>
+
+        <section class="form-card" aria-labelledby="form-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR NEXT BIG MOMENT</p>
+                    <h2 id="form-title">Add a new event</h2>
+                </div>
+            </div>
+
+            <form id="event-form">
+                <div class="form-fields">
+                    <label>
+                        Event name
+                        <input type="text" id="event-name" placeholder="e.g. My Birthday" maxlength="60" required>
+                    </label>
+                    <label>
+                        Event date and time
+                        <input type="datetime-local" id="event-date" required>
+                    </label>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" id="save-button" class="primary-button">＋ Add Event</button>
+                    <button type="button" id="cancel-edit" class="secondary-button hidden">Cancel</button>
+                </div>
+                <p id="form-message" class="form-message" role="status"></p>
+            </form>
+        </section>
+
+        <section class="events-section" aria-labelledby="events-title">
+            <div class="events-heading">
+                <div>
+                    <p class="eyebrow">YOUR PERSONAL TIMELINE</p>
+                    <h2 id="events-title">Your events <span id="event-count" class="count">0</span></h2>
+                </div>
+                <span class="live-label"><span class="live-dot"></span> LIVE COUNTDOWN</span>
+            </div>
+            <div id="event-list" class="event-list" aria-live="polite"></div>
+        </section>
+
+        <footer>Made to help you look forward to what's next.</footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
